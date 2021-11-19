@@ -1,0 +1,18 @@
+[
+
+    {
+        "stockname": "Amazon",
+        "stocknumber": 30,
+        "stockprice": 120
+    },
+    {
+        "stockname": "Flipkart",
+        "stocknumber": 50,
+        "stockprice": 100
+    },
+    {
+        "stockname": "Uber",
+        "stocknumber": 80,
+        "stockprice": 70
+    }
+]

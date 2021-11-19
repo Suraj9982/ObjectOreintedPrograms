@@ -5,13 +5,15 @@ namespace ObjectOreinted
     class Program
     {
         static string filepath = @"C:\Users\admin\Desktop\github\ObjectOreintedPrograms\ObjectOreinted\ObjectOreinted\Files\InventoryList.json";
+        static string stockfilepath = @"C:\Users\admin\Desktop\github\ObjectOreintedPrograms\ObjectOreinted\ObjectOreinted\Files\Stocklist.json";
         static void Main(string[] args)
         {
             InventoryMain inventory = new InventoryMain();
+            StockMain stocklist = new StockMain();
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("CHOOSE OPTION:\n1.Read Inventory list\n2.Display Inventory list\n3.Exit");
+                Console.WriteLine("CHOOSE OPTION:\n1.Read Inventory list\n2.Display Inventory list\n3.Display Stock list\n4.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -25,10 +27,13 @@ namespace ObjectOreinted
                         inventory.DisplayData(name);
                         break;
                     case 3:
+                        stocklist.DisplayStockData(stockfilepath);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                     default:
-                        Console.WriteLine("your choice should be between 1 to 3");
+                        Console.WriteLine("your choice should be between 1 to 4");
                         break;
                 }
             }
