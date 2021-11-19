@@ -10,24 +10,53 @@ namespace ObjectOreinted
 {
     class InventoryMain
     {
-        public void DisplayData(string filepath)
+        List<InventoryModel> ricelist;
+        List<InventoryModel> wheatlist;
+        List<InventoryModel> pulseslist;
+
+        public void ReadData(string filepath)
         {
             try
             {
                 using (StreamReader r = new StreamReader(filepath))
                 {
                     var json = r.ReadToEnd();
-                    var items = JsonConvert.DeserializeObject<List<InventoryModel>>(json);
-                    Console.WriteLine("Name\tWeight\tPrice");
-                    foreach (var item in items)
-                    {
-                        Console.WriteLine("{0}" + "\t" + "{1}" + "\t" + "{2}", item.Name, item.Weight, item.Price);
-                    }
+                    InventoryFactory item = JsonConvert.DeserializeObject<InventoryFactory>(json);
+                    ricelist = item.Rice;
+                    wheatlist = item.Wheat;
+                    pulseslist = item.Pulses;
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            }
+        }
+        public void DisplayData(string state)
+        {
+            if (state == "rice".ToLower())
+            {
+                Console.WriteLine("Name\tWeight\tPrice");
+                foreach (var items in ricelist)
+                {
+                    Console.WriteLine("{0}" + "\t" + "{1}" + "\t" + "{2}", items.Name, items.Weight, items.Price);
+                }
+            }
+            if (state == "Wheat".ToLower())
+            {
+                Console.WriteLine("Name\tWeight\tPrice");
+                foreach (var items in wheatlist)
+                {
+                    Console.WriteLine("{0}" + "\t" + "{1}" + "\t" + "{2}", items.Name, items.Weight, items.Price);
+                }
+            }
+            if (state == "pulse".ToLower())
+            {
+                Console.WriteLine("Name\tWeight\tPrice");
+                foreach (var items in pulseslist)
+                {
+                    Console.WriteLine("{0}" + "\t" + "{1}" + "\t" + "{2}", items.Name, items.Weight, items.Price);
+                }
             }
         }
     }

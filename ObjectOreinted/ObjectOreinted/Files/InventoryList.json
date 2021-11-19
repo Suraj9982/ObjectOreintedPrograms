@@ -1,0 +1,53 @@
+{
+    "Rice": [
+        {
+            "Name": "Basmathi",
+            "Weight": 10,
+            "Price": 1000
+        },
+        {
+            "Name": "Sona Masuri",
+            "Weight": 10,
+            "Price": 150
+        },
+        {
+            "Name": "Jeera",
+            "Weight": 10,
+            "Price": 900
+        }
+    ],
+    "Wheat": [
+        {
+            "Name": "atta",
+            "Weight": 25,
+            "Price": 1000
+        },
+        {
+            "Name": "maida",
+            "Weight": 5,
+            "Price": 500
+        },
+        {
+            "Name": "besan",
+            "Weight": 2,
+            "Price": 100
+        }
+    ],
+    "Pulses": [
+        {
+            "Name": "beans",
+            "Weight": 400,
+            "Price": 1000
+        },
+        {
+            "Name": "black beans",
+            "Weight": 20,
+            "Price": 150
+        },
+        {
+            "Name": "chole",
+            "Weight": 10,
+            "Price": 900
+        }
+    ]
+}
